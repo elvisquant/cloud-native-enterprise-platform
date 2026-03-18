@@ -1,17 +1,10 @@
-# 🏗️ Cloud-Native Enterprise Platform (CNEP)
+# 🏗️ Cloud-Native Enterprise Platform (CNEP)v2.0
 
 > **A Senior-Level Reference Architecture for Secure, Scalable, and Automated Kubernetes Operations.**
 
-[![Terraform](https://img.shields.io/badge/Infrastructure-Terraform-623CE4?logo=terraform)](https://terraform.io)
-[![Kubernetes](https://img.shields.io/badge/Orchestration-Kubernetes-326CE5?logo=kubernetes)](https://kubernetes.io)
-[![Security](https://img.shields.io/badge/Secrets-HashiCorp_Vault-FFEC6E?logo=hashicorpvault)](https://vaultproject.io)
-[![GitOps](https://img.shields.io/badge/CD-ArgoCD-EF7B4D?logo=argo)](https://argoproj.github.io/cd/)
+Production-Grade, Zero-Trust Platform for Scalable Microservices (Zawatu API).
 
 ---
-
-🏗️ Enterprise Cloud Platform (ECP) v2.0
-
-    Production-Grade, Zero-Trust Platform for Scalable Microservices (Zawatu API)
 
 ![alt text](https://img.shields.io/badge/Infrastructure-Terraform-623CE4?logo=terraform)
 ![alt text](https://img.shields.io/badge/Orchestration-GKE_Private-326CE5?logo=kubernetes)
@@ -33,7 +26,8 @@ This repository demonstrates a **Production-Ready Platform** designed to solve t
 
 ---
 
-🗺️ High-Level Architecture (The Big Picture)
+## 🗺️ High-Level Architecture (The Big Picture)
+
 code Mermaid
 
 graph TD
@@ -60,7 +54,10 @@ end
         Terraform -- Manages --> GKE[GKE Cluster]
     end
 
-🛠️ The Tech Stack (Deep Dive)
+---
+
+## 🛠️ The Tech Stack (Deep Dive)
+
 Component Technology Role
 Cloud Provider Google Cloud Platform (GCP) Core Infrastructure
 Infrastructure Terraform (Modules) Declarative IaC with Remote State Locking
@@ -114,7 +111,9 @@ Security/Policy Kyverno Policy-as-Code Admission Controller
 
     Step 5.3: CI updates the GitOps repo. ArgoCD triggers a Canary Rollout.
 
-🛡️ Security & Zero-Trust Architecture
+---
+
+## 🛡️ Security & Zero-Trust Architecture
 
     Runtime Secrets: Applications never see a long-lived password. They fetch short-lived tokens from Vault using Workload Identity.
 
@@ -124,7 +123,9 @@ Security/Policy Kyverno Policy-as-Code Admission Controller
 
     No SSH: Debugging is done via ephemeral containers or logged interactive sessions—never direct SSH to nodes.
 
-📊 Observability & SRE (The 4 Golden Signals)
+---
+
+## 📊 Observability & SRE (The 4 Golden Signals)
 
 The platform is pre-configured with Grafana dashboards focusing on:
 
@@ -146,19 +147,53 @@ The platform is pre-configured with Grafana dashboards focusing on:
 
     Scenario D (Configuration Drift): If a user manually edits a resource, ArgoCD detects the diff and overwrites it to match Git within 3 minutes.
 
-🏗️ Repository Structure
-code Text
+---
 
-├── infra/ # Terraform modules and environment configs
-├── k8s/ # GitOps Manifests (ArgoCD Applications)
-│ ├── bootstrap/ # Initial cluster setup
-│ ├── system/ # Cluster-wide tools (Vault, Monitoring)
-│ └── apps/ # Business applications (Zawatu)
+## 📂 The "Enterprise Platform" Directory Structure
+
+.
+├── .github/ # GitHub Actions Workflows (CI/CD)
+│ └── workflows/ # Main build/test/deploy pipelines
+│
+├── infra/ # Infrastructure as Code (Day 0)
+│ └── terraform/ # Terraform Root
+│ ├── modules/ # Reusable Modules (VPC, GKE, SQL, KMS)
+│ └── environments/ # Environment-specific values
+│ ├── dev/ # Development sandbox
+│ └── prod/ # Production-grade infrastructure
+│
+├── k8s/ # Kubernetes GitOps Manifests (Day 1)
+│ ├── bootstrap/ # ArgoCD "App-of-Apps" entry point
+│ ├── system/ # Cluster-wide Add-ons (The Platform)
+│ │ ├── ingress-nginx/ # Traffic controller
+│ │ ├── cert-manager/ # Automated SSL/TLS
+│ │ ├── external-secrets/ # Vault to K8s sync
+│ │ └── monitoring/ # Prometheus & Grafana stack
+│ └── apps/ # Business Logic (The Zawatu App)
+│ ├── base/ # Common K8s manifests
+│ └── overlays/ # Environment patches (Dev/Prod)
+│
 ├── services/ # Application Source Code
-├── pipeline/ # GitHub Action Workflows
-└── scripts/ # Automation & Helper scripts
+│ └── zawatu-api/ # The core Go/Node/Python API
+│ ├── src/ # Application logic
+│ ├── tests/ # Unit & Integration tests
+│ └── Dockerfile # Multi-stage secure build
+│
+├── security/ # Security & Governance
+│ ├── vault-policies/ # HCL files for Vault RBAC
+│ └── policies/ # Kyverno/OPA Policy-as-Code rules
+│
+├── scripts/ # Automation & Bootstrap
+│ ├── setup-vault.sh # Vault initialization logic
+│ └── cluster-init.sh # Local environment setup
+│
+└── docs/ # High-level Documentation
+└── architecture/ # Diagrams and ADRs (Decision Records)
 
-👨‍💻 Author & Lead Architect
+---
+
+## 👨‍💻 Author & Lead Architect
+
 Ndayishimiye Elvis Senior Platform Engineer & Cloud-Native Architect
 🚀 Specialization Kubernetes Ecosystem (GKE/EKS), Zero-Trust Security (Vault), & GitOps (ArgoCD)
 🛠️ Current Focus Engineering Resilient, Self-Healing Platforms for Global Scale
@@ -170,7 +205,10 @@ Ndayishimiye Elvis Senior Platform Engineer & Cloud-Native Architect
 <a href="mailto:info@zawatu.com" target="blank"><img align="center" src="https://img.icons8.com/fluent/48/000000/mail.png" alt="info@zawatu.com" height="30" width="30" /></a>
 <a href="https://www.bindava.com" target="blank"><img align="center" src="https://img.icons8.com/fluent/48/000000/domain.png" alt="bindava" height="30" width="30" /></a>
 </p>
-🤝 Contributing & Community
+
+---
+
+## 🤝 Contributing & Community
 
 As a Lead Architect, I believe in the power of open-source collaboration and the "Platform Engineering" mindset.
 
@@ -180,7 +218,9 @@ As a Lead Architect, I believe in the power of open-source collaboration and the
 
     Business Inquiries: For professional consulting or enterprise platform audits, contact me at info@zawatu.com.
 
-🏆 Recognitions & Skills
+---
+
+## 🏆 Recognitions & Skills
 
 ![alt text](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
 ![alt text](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
