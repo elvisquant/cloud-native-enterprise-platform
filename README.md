@@ -151,60 +151,61 @@ The platform is pre-configured with Grafana dashboards focusing on:
 
 ## 📂 The "Enterprise Platform" Directory Structure
 
+```text
 .
-├── .github/ # GitHub Actions Workflows (CI/CD)
-│ └── workflows/ # Main build/test/deploy pipelines
+├── .github/                   # GitHub Actions Workflows (CI/CD)
+│   └── workflows/             # Main build/test/deploy pipelines
 │
-├── infra/ # Infrastructure as Code (Day 0)
-│ └── terraform/ # Terraform Root
-│ ├── modules/ # Reusable Modules (VPC, GKE, SQL, KMS)
-│ └── environments/ # Environment-specific values
-│ ├── dev/ # Development sandbox
-│ └── prod/ # Production-grade infrastructure
+├── infra/                     # Infrastructure as Code (Day 0)
+│   └── terraform/             # Terraform Root
+│       ├── modules/           # Reusable Modules (VPC, GKE, SQL, KMS)
+│       └── environments/      # Environment-specific values
+│           ├── dev/           # Development sandbox
+│           └── prod/          # Production-grade infrastructure
 │
-├── k8s/ # Kubernetes GitOps Manifests (Day 1)
-│ ├── bootstrap/ # ArgoCD "App-of-Apps" entry point
-│ ├── system/ # Cluster-wide Add-ons (The Platform)
-│ │ ├── ingress-nginx/ # Traffic controller
-│ │ ├── cert-manager/ # Automated SSL/TLS
-│ │ ├── external-secrets/ # Vault to K8s sync
-│ │ └── monitoring/ # Prometheus & Grafana stack
-│ └── apps/ # Business Logic (The Zawatu App)
-│ ├── base/ # Common K8s manifests
-│ └── overlays/ # Environment patches (Dev/Prod)
+├── k8s/                       # Kubernetes GitOps Manifests (Day 1)
+│   ├── bootstrap/             # ArgoCD "App-of-Apps" entry point
+│   ├── system/                # Cluster-wide Add-ons (The Platform)
+│   │   ├── ingress-nginx/     # Traffic controller
+│   │   ├── cert-manager/      # Automated SSL/TLS
+│   │   ├── external-secrets/  # Vault to K8s sync
+│   │   └── monitoring/        # Prometheus & Grafana stack
+│   └── apps/                  # Business Logic (The Zawatu App)
+│       ├── base/              # Common K8s manifests
+│       └── overlays/          # Environment patches (Dev/Prod)
 │
-├── services/ # Application Source Code
-│ └── zawatu-api/ # The core Go/Node/Python API
-│ ├── src/ # Application logic
-│ ├── tests/ # Unit & Integration tests
-│ └── Dockerfile # Multi-stage secure build
+├── services/                  # Application Source Code
+│   └── zawatu-api/            # The core Go/Node/Python API
+│       ├── src/               # Application logic
+│       ├── tests/             # Unit & Integration tests
+│       └── Dockerfile         # Multi-stage secure build
 │
-├── security/ # Security & Governance
-│ ├── vault-policies/ # HCL files for Vault RBAC
-│ └── policies/ # Kyverno/OPA Policy-as-Code rules
+├── security/                  # Security & Governance
+│   ├── vault-policies/        # HCL files for Vault RBAC
+│   └── policies/              # Kyverno/OPA Policy-as-Code rules
 │
-├── scripts/ # Automation & Bootstrap
-│ ├── setup-vault.sh # Vault initialization logic
-│ └── cluster-init.sh # Local environment setup
+├── scripts/                   # Automation & Bootstrap
+│   ├── setup-vault.sh         # Vault initialization logic
+│   └── cluster-init.sh        # Local environment setup
 │
-└── docs/ # High-level Documentation
-└── architecture/ # Diagrams and ADRs (Decision Records)
+└── docs/                      # High-level Documentation
+    └── architecture/          # Diagrams and ADRs (Decision Records)
 
 ---
 
 ## 👨‍💻 Author & Lead Architect
 
-Ndayishimiye Elvis Senior Platform Engineer & Cloud-Native Architect
-🚀 Specialization Kubernetes Ecosystem (GKE/EKS), Zero-Trust Security (Vault), & GitOps (ArgoCD)
-🛠️ Current Focus Engineering Resilient, Self-Healing Platforms for Global Scale
-🌐 Portfolio www.bindava.com
-🔗 Connect With Me
+| **Ndayishimiye Elvis** | **Senior Platform Engineer & Cloud-Native Architect** |
+| :--- | :--- |
+| 🚀 **Specialization** | Kubernetes Ecosystem (GKE/EKS), Zero-Trust Security (Vault), & GitOps (ArgoCD) |
+| 🛠️ **Current Focus** | Engineering Resilient, Self-Healing Platforms for Global Scale |
+| 🌐 **Portfolio** | [www.bindava.com](https://www.bindava.com) |
+| 📧 **Contact** | [info@zawatu.com](mailto:info@zawatu.com) |
 
-<p align="left">
-<a href="https://www.linkedin.com/in/ndayishimiye-elvis" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="ndayishimiye-elvis" height="30" width="40" /></a>
-<a href="mailto:info@zawatu.com" target="blank"><img align="center" src="https://img.icons8.com/fluent/48/000000/mail.png" alt="info@zawatu.com" height="30" width="30" /></a>
-<a href="https://www.bindava.com" target="blank"><img align="center" src="https://img.icons8.com/fluent/48/000000/domain.png" alt="bindava" height="30" width="30" /></a>
-</p>
+---
+
+### 🔗 Connect With Me
+[LinkedIn](https://www.linkedin.com/in/ndayishimiye-elvis) | [Portfolio](https://www.bindava.com) | [GitHub](https://github.com/elvisquant)
 
 ---
 
@@ -229,3 +230,4 @@ As a Lead Architect, I believe in the power of open-source collaboration and the
 ![alt text](https://img.shields.io/badge/Argo_CD-EF7B4D?style=for-the-badge&logo=argo-cd&logoColor=white)
 
 This platform is licensed under the MIT License - feel free to use it as a foundation for your enterprise journeys.
+```
