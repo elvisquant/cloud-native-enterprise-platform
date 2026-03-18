@@ -190,21 +190,23 @@ The platform is pre-configured with Grafana dashboards focusing on:
 │
 └── docs/                      # High-level Documentation
     └── architecture/          # Diagrams and ADRs (Decision Records)
+```
 
 ---
 
 ## 👨‍💻 Author & Lead Architect
 
-| **Ndayishimiye Elvis** | **Senior Platform Engineer & Cloud-Native Architect** |
-| :--- | :--- |
-| 🚀 **Specialization** | Kubernetes Ecosystem (GKE/EKS), Zero-Trust Security (Vault), & GitOps (ArgoCD) |
-| 🛠️ **Current Focus** | Engineering Resilient, Self-Healing Platforms for Global Scale |
-| 🌐 **Portfolio** | [www.bindava.com](https://www.bindava.com) |
-| 📧 **Contact** | [info@zawatu.com](mailto:info@zawatu.com) |
+| **Ndayishimiye Elvis** | **Senior Platform Engineer & Cloud-Native Architect**                          |
+| :--------------------- | :----------------------------------------------------------------------------- |
+| 🚀 **Specialization**  | Kubernetes Ecosystem (GKE/EKS), Zero-Trust Security (Vault), & GitOps (ArgoCD) |
+| 🛠️ **Current Focus**   | Engineering Resilient, Self-Healing Platforms for Global Scale                 |
+| 🌐 **Portfolio**       | [www.bindava.com](https://www.bindava.com)                                     |
+| 📧 **Contact**         | [info@zawatu.com](mailto:info@zawatu.com)                                      |
 
 ---
 
 ### 🔗 Connect With Me
+
 [LinkedIn](https://www.linkedin.com/in/ndayishimiye-elvis) | [Portfolio](https://www.bindava.com) | [GitHub](https://github.com/elvisquant)
 
 ---
@@ -230,4 +232,3 @@ As a Lead Architect, I believe in the power of open-source collaboration and the
 ![alt text](https://img.shields.io/badge/Argo_CD-EF7B4D?style=for-the-badge&logo=argo-cd&logoColor=white)
 
 This platform is licensed under the MIT License - feel free to use it as a foundation for your enterprise journeys.
-```
